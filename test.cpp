@@ -14,7 +14,7 @@ int main(int argc, char* argv[]){
     std::vector<Key> keys;
     std::vector<_value_t> values;
     std::string file = argv[1];
-    std::string filepath = "/home/czl/dataset/vary_len/" + file;
+    std::string filepath = "/path/to/" + file;
     keys.reserve(10000000);
     values.reserve(10000000);
     std::ifstream in(filepath, std::ios::in);
@@ -59,9 +59,8 @@ int main(int argc, char* argv[]){
 
     end_time = get_now();
     double tput = opnum / (end_time - start_time) / 1000000; //Mops/sec
-    FILE *fp=fopen("/home/czl/trie_index/sbench/LISK/test/statistics.txt","a+");
     std::cout << file << ": throughput " << tput << " Mops/s"<<std::endl;
-    fprintf(fp, "%s: throughput %lf Mops/s\n",file.c_str(), tput);
+    
     #ifndef NDEBUG
     std::cout<<"average search depth: "<<(double)lisk::index_depth/opnum<<std::endl;
     std::cout<<"average inner probe length: "<<(double)lisk::inner_probe_length/opnum<<std::endl;
