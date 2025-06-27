@@ -5,7 +5,7 @@ Implementation of the paper "LISK: A High-Performance Learned Index for String K
 
 Assuming to compile under a `build` directory:
 ```bash
-git clone https://github.com/baotonglu/dex.git
+git clone https://github.com/suibianll/LISK/tree/master
 cd LISK
 mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=Release .. 
